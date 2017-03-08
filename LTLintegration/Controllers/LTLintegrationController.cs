@@ -19,13 +19,13 @@ namespace LTLintegration.Controllers
         public ActionResult install(string shop, string signature, string timestamp)
         {
 
-            string r = string.Format("https://{0}/admin/oauth/authorize?client_id={1}&scope=read_shipping,write_shipping&redirect_uri=https://{2}/LTLintegration/auth", shop, apiKey, appUrl);
+            string r = string.Format("https://{0}/admin/oauth/authorize?client_id={1}&scope=read_shipping,write_shipping&redirect_uri=http://{2}/LTLintegration/auth", shop, apiKey, appUrl);
             return Redirect(r);
 
         }
         public ActionResult auth(string shop, string code)
         {
-            string u = string.Format("http://{0}/admin/oauth/access_token", shop);
+            string u = string.Format("https://{0}/admin/oauth/access_token", shop);
 
             var client = new RestClient(u);
 
