@@ -25,7 +25,7 @@ namespace LTLintegration.Controllers
         }
         public ActionResult auth(string shop, string code)
         {
-            string u = string.Format("https://{0}/admin/oauth/access_token", shop);
+            string u = string.Format("http://{0}/admin/oauth/access_token", shop);
 
             var client = new RestClient(u);
 
